@@ -1,0 +1,33 @@
+1. The Purpose
+When you share your code (e.g., on GitHub), other users or servers need to know which external libraries are required to make your script run. Instead of the user guessing which version of pandas or numpy you used, the requirements.txt file provides a definitive list.
+
+This ensures reproducibility—the guarantee that the code will work the same way on someone else's machine as it did on yours.
+
+2. Format and Syntax
+The file is a plain text file where each line contains the name of a package. You can specify versions to prevent future updates of a library from "breaking" your code:
+
+No version specified: pandas (Installs the latest version).
+
+Exact version: pandas == 2.1.0 (Recommended for stability).
+
+Minimum version: pandas >= 2.0.0.
+
+3. How to Generate It
+You don't usually write this file by hand for large projects. Instead, you use a command in your terminal/command prompt while your virtual environment is active:
+
+Bash
+pip freeze > requirements.txt
+This command takes every library currently installed in your environment and writes it into the text file.
+
+4. How to Use It (Installation)
+When a new developer clones your GitHub repository, they don't install libraries one by one. They run a single command to install everything listed in your file:
+
+Bash
+pip install -r requirements.txt
+5. Role in your Sales Analysis Project
+For your specific project, the file is minimal because we are only using one external library:
+
+Contents of your requirements.txt:
+
+Plaintext
+pandas
